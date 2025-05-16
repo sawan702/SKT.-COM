@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SawanComedy.com</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    .hidden { display: none; }
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #444;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, button, textarea {
+      padding: 10px;
+      margin: 8px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .auth-box {
+      max-width: 400px;
+      margin: 60px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .games-list a, .links-list a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Signup/Login Box -->
+<div id="auth" class="auth-box">
+  <h2>Create Your Account</h2>
+  <input type="text" id="authName" placeholder="Enter your name" required />
+  <input type="tel" id="authPhone" placeholder="Enter your phone number" required />
+  <input type="password" id="authPass" placeholder="Create a password" required />
+  <button onclick="signup()">Sign Up</button>
+</div>
+
+<!-- Main Website -->
+<div id="mainContent" class="hidden">
+  <header>
+    <h1>Welcome to SawanComedy.com</h1>
+    <p>By Sawan Tiwari</p>
+  </header>
+
+  <nav>
+    <a href="#uids">UIDs</a>
+    <a href="#comedy">Comedy</a>
+    <a href="#games">Games</a>
+    <a href="#products">Products</a>
+    <a href="#channel">Channel</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="uids">
+    <h2>YouTube UID Section</h2>
+    <ul>
+      <li>UID 1 - Coming soon</li>
+      <li>UID 2 - Coming soon</li>
+    </ul>
+  </section>
+
+  <section id="comedy">
+    <h2>Comedy Section</h2>
+    <p>Enjoy funny jokes, videos and more:</p>
+    <ul>
+      <li>Comedy Clip 1 - Coming soon</li>
+    </ul>
+  </section>
+
+  <section id="games">
+    <h2>Play Online Games</h2>
+    <div class="games-list">
+      <a href="https://agar.io" target="_blank">Agar.io</a>
+      <a href="https://slither.io" target="_blank">Slither.io</a>
+      <a href="https://krunker.io" target="_blank">Krunker.io</a>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2>Our Product Links</h2>
+    <div class="links-list">
+      <a href="https://www.amazon.in/dp/B08XYZ" target="_blank">Buy This Product</a>
+    </div>
+  </section>
+
+  <section id="channel">
+    <h2>Visit Our Channel</h2>
+    <a href="https://www.youtube.com/channel/UCXXXXXXXX" target="_blank">YouTube Channel Link</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Email</button>
+    </form>
+
+    <h3>Send SMS</h3>
+    <a href="sms:+91XXXXXXXXXX?body=Hello%20Sawan%20Tiwari!" class="links-list">Send SMS</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Sawan Tiwari. All Rights Reserved.
+  </footer>
+</div>
+
+<script>
+  function signup() {
+    const name = document.getElementById("authName").value;
+    const phone = document.getElementById("authPhone").value;
+    const pass = document.getElementById("authPass").value;
+
+    if (name && phone && pass.length >= 4) {
+      // Store user data in browser (for demo only)
+      localStorage.setItem("sawanUser", JSON.stringify({ name, phone }));
+      document.getElementById("auth").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+    } else {
+      alert("Please fill all fields properly (password must be 4+ characters)");
+    }
+  }
+</script>
+
+</body>
+  </html>
